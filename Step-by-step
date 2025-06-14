@@ -1,0 +1,48 @@
+Add dependency first: JPA, JDBC, H2.
+
+H2:
+
+Enabled first application.properites : spring.h2.console.enabled=true | URL: h2-console
+Configuring url (PASSWORD) : spring.datasource.url=jdbc:........
+Crete schema.sql file in resource folder, h2 console automatically recognized table
+If you want insert data in schema.sql table you need direct in h2 console insert data.
+
+EXAMPLE :
+
+{
+insert into course(id, name, author)
+values (1, 'Learn AWS', 'in28minutes');
+
+select * from course;
+
+delete from course
+where id = 1;
+}
+
+JDBC:
+
+Create class CourseJdbcRepository
+{
+Write query insert data quarey
+}
+
+Create class ClassJdbcCommandLineRunner implement CommandLineRunner
+
+Create course table
+
+
+
+JPA: EntityManager
+
+Add annotation course classw @Entity -> directly connect h2-console dont need schemae.sql file
+
+Create CourseJpaRepository
+
+
+application.properties :-> spring.jpa.show-sql=true -> Showing all sql querys in console
+
+
+SPRING DATA JPA :
+
+Create an interface CourseSpringDataJapRepository
+
